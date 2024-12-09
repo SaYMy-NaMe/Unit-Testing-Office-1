@@ -27,9 +27,7 @@ namespace PrimeService.Tests
         {
             _stack.Push(1);
             Assert.IsFalse(_stack.IsEmpty());
-            #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(1,_stack.Size());
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+            Assert.That(_stack.Size(), Is.EqualTo(1));
         }
 
         //3. Task: Push 3 elements on the stack, the size should be 3
@@ -39,9 +37,7 @@ namespace PrimeService.Tests
             _stack.Push(1);
             _stack.Push(2);
             _stack.Push(3);
-            #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(3, _stack.Size());
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+            Assert.That(_stack.Size(), Is.EqualTo(3));
         }
 
         //4. Task: Pop an element from the stack with 3 elements, the size should be 2
@@ -51,10 +47,8 @@ namespace PrimeService.Tests
             _stack.Push(1);
             _stack.Push(2);
             _stack.Push(3);
-            _stack.Pop();
-            #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(2, _stack.Size());
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+            _stack.Pop();    
+            Assert.That(_stack.Size(), Is.EqualTo(2));
         }
 
         //5. Task: Push a single object, Pop the object, and verify that IsEmpty is true and size is zero
@@ -64,8 +58,7 @@ namespace PrimeService.Tests
             _stack.Push(1);
             var popped = _stack.Pop();
             #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(1, popped);
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+            Assert.That(popped, Is.EqualTo(1));
             Assert.IsTrue(_stack.IsEmpty());
         }
 
@@ -75,9 +68,7 @@ namespace PrimeService.Tests
         {
             _stack.Push(1);
             var popped = _stack.Pop();
-            #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(1, popped);
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+           Assert.That(popped, Is.EqualTo(1));
         }
 
         //7. Task: Push three objects, remembering what they are; Pop each one, and verify that they are removed in the reverse order
@@ -88,14 +79,9 @@ namespace PrimeService.Tests
             _stack.Push(2);
             _stack.Push(3);
             #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(3, _stack.Pop());
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(2, _stack.Pop());
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(1, _stack.Pop());
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+            Assert.That(_stack.Pop(), Is.EqualTo(3));
+            Assert.That(_stack.Pop(), Is.EqualTo(2));
+            Assert.That(_stack.Pop(), Is.EqualTo(1));
         }
 
         //8. Task: Pop a Stack that has no elements, it should result in underflow condition
@@ -120,9 +106,7 @@ namespace PrimeService.Tests
         {
             _stack.Push(1);
             var top = _stack.Top();
-            #pragma warning disable NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
-            Assert.AreEqual(1, top);
-            #pragma warning restore NUnit2005 // Consider using Assert.That(actual, Is.EqualTo(expected)) instead of Assert.AreEqual(expected, actual)
+            Assert.That(top, Is.EqualTo(1));
         }
 
         //11. Task: Call Top on a Stack with no elements, it should result in underflow condition

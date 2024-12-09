@@ -9,3 +9,4 @@ C:\Users\ashraful\Desktop\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0
 C:\Users\ashraful\Desktop\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\refint\PrimeService.dll
 C:\Users\ashraful\Desktop\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.pdb
 C:\Users\ashraful\Desktop\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\ref\PrimeService.dll
+C:\Users\ashraful\Desktop\unit-testing-using-nunit\PrimeService\obj\Debug\net8.0\PrimeService.sourcelink.json
